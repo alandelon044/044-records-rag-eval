@@ -90,6 +90,7 @@ Predictions for v2 and v3 were written in the config logs before each run.
 | `02_Test_Cases/00_gaps_NOT_in_knowledge_base.md` | Topics deliberately left out of the knowledge base |
 | `05_Configuration/v1_config_log.md`, `v2_…`, `v3_…` | Exact settings, every change with its reason, predictions written before each run |
 | `03_Screenshots/` | Dify setup screenshots |
+| `04_Reports/per_question_results.md` | Score, error tag and cause for every question in v1, v2 and v3 |
 | `05_Configuration/setup_notes.md` | Notes from the initial setup (stages 0–3) |
 
 ## Authorship
