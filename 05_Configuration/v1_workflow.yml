@@ -1,0 +1,241 @@
+app:
+  description: Baseline RAG support assistant for the fictional U.S. label 044 Records.
+    English portfolio evaluation project.
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: 044 Records Support — v1
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.9.11@404476fff29ee10e6872eb5fca0ee7527380db9fde0a9cdc69364edf5ba49daa
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.23@f500332838ed670d0962a4f727618a2eb7e27a453ea56e72a28731f5f383ab72
+    version: null
+kind: app
+version: 0.7.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        knowledge_file_size_limit: 15
+        single_chunk_attachment_limit: 10
+        skill_file_size_limit: 50
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: llm-answer
+      source: llm
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: knowledge-retrieval
+      id: 1792154200057-source-1792154262076-target
+      source: '1792154200057'
+      sourceHandle: source
+      target: '1792154262076'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1792154262076-source-llm-target
+      source: '1792154262076'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: Start
+        type: start
+        variables: []
+      height: 72
+      id: '1792154200057'
+      position:
+        x: 0
+        y: 0
+      positionAbsolute:
+        x: 0
+        y: 0
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1792154262076'
+          - result
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: gemini-3.1-flash-lite
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 11531ab7-38ea-4fea-a5c1-27985a3a1a06
+          role: system
+          text: 'You are a support assistant for 044 Records. Answer questions from
+            fans and artists using the information in the context.
+
+
+            Context:
+
+            {{#context#}}'
+        selected: false
+        title: LLM
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: llm
+      position:
+        x: 684
+        y: 13
+      positionAbsolute:
+        x: 684
+        y: 13
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#llm.text#}}'
+        selected: false
+        title: Answer
+        type: answer
+        variables: []
+      height: 101
+      id: answer
+      position:
+        x: 1026
+        y: 20.5
+      positionAbsolute:
+        x: 1026
+        y: 20.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - pUMTpaRqWZ9/gF/BiGdbRznz8g2EqburACVC/FaDuAfyhndlfVBue4Gr018re1FL
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1792154200057'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: Knowledge Retrieval
+        type: knowledge-retrieval
+      height: 89
+      id: '1792154262076'
+      position:
+        x: 342
+        y: 22.5
+      positionAbsolute:
+        x: 342
+        y: 22.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    viewport:
+      x: 58.54545454545462
+      y: 337.40163464295955
+      zoom: 0.9234298824204186
+  rag_pipeline_variables: []

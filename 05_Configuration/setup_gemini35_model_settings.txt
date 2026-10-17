@@ -1,0 +1,306 @@
+- link "Перейти к основному содержанию":
+  - /url: "#main-content"
+- complementary:
+  - link "Главная":
+    - /url: /
+  - generic: /
+  - link "Студия":
+    - /url: /apps
+  - button "Ищите что угодно"
+  - button "Свернуть боковую панель":
+  - generic: 🤖
+  - generic: 044 Records Support — v1
+  - button "Дополнительные действия для 044 Records Support — v1"
+  - generic: Чатфлоу
+  - navigation:
+    - link "Оркестрация":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/workflow
+      - generic: Оркестрация
+    - link "Точка доступа":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/access-point
+      - generic: Точка доступа
+    - link "Журналы":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/logs
+      - generic: Журналы
+    - link "Аннотации":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/annotations
+      - generic: Аннотации
+    - link "Мониторинг":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/overview
+      - generic: Мониторинг
+  - button "Dify Счет":
+    - generic: D
+    - generic "Dify"
+    - generic: Счет
+  - button "Открыть меню помощи"
+- main:
+  - button "Добавить узел"
+  - button "Добавить заметку"
+  - button "Режим указателя" [pressed]
+  - button "Режим руки"
+  - button "Организовать узлы"
+  - button "Больше действий"
+  - button "Отменить"
+  - button "Повторить" [disabled]
+  - button "История изменений"
+  - generic: Посмотреть кэшированные переменные
+  - generic: Ясно
+  - img "React Flow mini map"
+  - button "Уменьшить"
+  - button "92%"
+  - button "Увеличить"
+  - status "Статус сохранения рабочего процесса":
+    - generic: Автосохранено
+    - time: 15:47:19
+    - generic: ·
+    - generic: Не опубликовано
+  - button "Прокрутите до выбранного узла"
+  - button "Предпросмотр": Предпросмотр
+  - button "Посмотреть историю запусков"
+  - button "Контрольный список"
+  - button "Переменные разговора"
+  - button "Переменные среды"
+  - button "Системные переменные"
+  - button "Функции": Функции
+  - button "Опубликовать": Опубликовать
+  - button "История версий"
+  - separator "Панель настройки узла"
+  - textbox "Добавить заголовок...": LLM
+  - button "Выполнить этот шаг":
+  - link "Помощь":
+    - /url: https://docs.dify.ai/en/cloud/use-dify/nodes/llm
+  - button "Больше"
+  - button "Закрывать":
+  - textbox "Добавить описание..."
+  - tablist:
+    - tab "НАСТРОЙКИ" [selected]
+    - tab "ПОСЛЕДНИЙ ЗАПУСК"
+  - tabpanel "НАСТРОЙКИ":
+    - generic: модель *
+    - radiogroup "Используйте переменную, Входное значение":
+      - radio "Используйте переменную"
+      - radio
+      - radio "Входное значение" [checked]
+      - radio [checked]
+    - button "Настройка модели":
+      - generic "Gemini 3.5 Flash-Lite"
+      - generic: CHAT
+    - button "Настройки моделей" [expanded]
+    - dialog:
+      - generic: Настройки моделей
+      - button "Закрывать" [active]
+      - generic: ПАРАМЕТРЫ
+      - generic "Include thoughts"
+      - button "Indicates whether to include thoughts in the response. If true, thoughts are returned only if the model supports thought and thoughts are available. Default is false."
+      - radiogroup "Include thoughts":
+        - generic: Include thoughts
+        - radio "True"
+        - radio
+        - text: "True"
+        - radio "False" [checked]
+        - radio [checked]
+        - text: "False"
+      - generic "Media resolution"
+      - 'button "Gemini 3 introduces fine-grained control over multimodal visual processing via the `media_resolution` parameter. Higher resolution improves the model''s ability to read small text or recognize fine details, but increases token usage and latency. Recommended Settings: - Images: `media_resolution_high` (1120 tokens) - Recommended for most image analysis tasks to ensure best quality. - PDF: `media_resolution_medium` (560 tokens) - Great for document understanding; quality usually saturates at medium. - Video (Regular): `media_resolution_low` or `medium` (70 tokens/frame) - Sufficient for most action recognition and description tasks. - Video (Text-heavy): `media_resolution_high` (280 tokens/frame) - Needed only when use cases involve reading dense text (OCR) or tiny details in video frames. Note: If not specified, the model uses the best default value based on the media type."'
+      - generic: Media resolution
+      - combobox "Media resolution":
+        - generic: Default
+      - textbox: Default
+      - generic "Thinking level"
+      - button "Indicates the thinking level. Default is Minimal."
+      - generic: Thinking level
+      - combobox "Thinking level":
+        - generic: Minimal
+      - textbox: Minimal
+      - generic "Grounding"
+      - button "Grounding with Google Search"
+      - radiogroup "Grounding":
+        - generic: Grounding
+        - radio "True"
+        - radio
+        - text: "True"
+        - radio "False" [checked]
+        - radio [checked]
+        - text: "False"
+      - generic "URL context"
+      - button "Browse the url context"
+      - radiogroup "URL context":
+        - generic: URL context
+        - radio "True"
+        - radio
+        - text: "True"
+        - radio "False" [checked]
+        - radio [checked]
+        - text: "False"
+      - generic "Code execution"
+      - button "Lets Gemini use code to solve complex tasks"
+      - radiogroup "Code execution":
+        - generic: Code execution
+        - radio "True"
+        - radio
+        - text: "True"
+        - radio "False" [checked]
+        - radio [checked]
+        - text: "False"
+      - generic "Output length"
+      - button "The maximum number of tokens to generate in the response."
+      - group "Output length":
+        - generic: Output length
+        - group "Output length":
+          - generic: Output length
+          - slider "Output length": "65501"
+        - spinbutton "Output length": "65536"
+      - generic "Service Tier"
+      - 'button "The inference tier for the request. You can switch between Gemini Standard, Flex, and Priority tiers. Default is Standard. - Flex: Lower cost with the possibility of capacity unavailability. - Standard: Default pricing and availability. - Priority: Higher cost with guaranteed capacity and lower latency. See: - https://ai.google.dev/gemini-api/docs/flex-inference - https://ai.google.dev/gemini-api/docs/priority-inference"'
+      - generic: Service Tier
+      - combobox "Service Tier":
+        - generic: standard
+      - textbox: standard
+      - generic "Use inline file mode"
+      - button "When enabled, files are embedded directly in the request. When disabled, files are uploaded with the Gemini Files API."
+      - radiogroup "Use inline file mode":
+        - generic: Use inline file mode
+        - radio "True"
+        - radio
+        - text: "True"
+        - radio "False" [checked]
+        - radio [checked]
+        - text: "False"
+      - switch "JSON Schema"
+      - checkbox
+      - generic "JSON Schema"
+      - button "Set a response json schema will ensure LLM to adhere it."
+      - textbox:
+        - paragraph
+      - generic: "Напишите здесь свое ключевое слово подсказки, введите '{', чтобы вставить переменную, введите '/', чтобы вставить блок содержимого подсказки"
+      - generic "Stop sequences"
+      - button "Up to four sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence."
+      - textbox "Введите последовательность и нажмите Tab"
+    - generic: контекст
+    - button "Вы можете импортировать знания как контекст"
+    - button "Knowledge Retrieval result array[object] 0":
+      - generic "Knowledge Retrieval"
+      - generic "result"
+      - generic "array[object]"
+      - textbox: "0"
+    - generic: Нажмите Пробел или Enter, чтобы начать сортировку. Перемещайте стрелками вверх и вниз. Нажмите Пробел или Enter для подтверждения, Escape для отмены.
+    - status
+    - generic: SYSTEM
+    - button "Дайте высокоуровневые инструкции для разговора"
+    - generic: "145"
+    - button "Сгенерировать":
+    - button "Включить поддержку шаблонов Jinja":
+    - switch
+    - checkbox
+    - button "Нажмите клавишу \"/\" чтобы быстро вставить":
+    - button "Копировать":
+    - button "Развернуть"
+    - textbox:
+      - paragraph: You are a support assistant for 044 Records. Answer questions from fans and artists using the information in the context.
+      - paragraph
+      - paragraph: "Context:"
+      - paragraph:
+        - generic: Контекст
+    - button "Добавить сообщение":
+      - generic: Добавить сообщение
+    - generic: Воспоминания
+    - button "Память чата"
+    - generic: Встроенные
+    - generic: user
+    - button "Предоставьте инструкции, запросы или любой текстовый ввод для модели"
+    - generic: "32"
+    - button "Нажмите клавишу \"/\" чтобы быстро вставить":
+    - button "Копировать":
+    - button "Развернуть"
+    - textbox:
+      - paragraph:
+        - generic "Начало"
+        - generic: /
+        - generic "query"
+      - paragraph
+      - paragraph:
+        - generic "Начало"
+        - generic: /
+        - generic "files"
+    - generic: Память
+    - button "Настройки памяти чата"
+    - switch [checked]
+    - checkbox [checked]
+    - switch
+    - checkbox
+    - generic: Размер окна
+    - group "Размер окна":
+      - generic: Размер окна
+      - group "Размер окна":
+        - generic: Размер окна
+        - slider "Размер окна" [disabled]: "10"
+      - textbox "Размер окна" [disabled]: "10"
+      - spinbutton [disabled]: "10"
+    - generic: зрение
+    - button "Включение зрения позволит модели принимать изображения и отвечать на вопросы о них."
+    - switch
+    - checkbox
+    - generic: Включите разделение тегов на основе логики
+    - button "Извлечь содержимое из тегов think и сохранить его в поле reasoning_content."
+    - switch
+    - checkbox
+    - button "Выходные переменные":
+      - generic: Выходные переменные
+    - generic: Структурированный
+    - button "Структурированные выходные данные — это функция, которая гарантирует, что модель всегда будет генерировать ответы, соответствующие вашей предоставленной JSON-схеме."
+    - switch
+    - checkbox
+    - generic: Повторная попытка при неудаче
+    - switch "Повторная попытка при неудаче"
+    - checkbox
+    - button "Обработка ошибок" [disabled] [expanded]:
+      - generic: Обработка ошибок
+    - button "Стратегия обработки исключений, запускаемая при обнаружении исключения на узле."
+    - button "Никакой":
+      - text: Никакой
+    - generic: СЛЕДУЮЩИЙ ШАГ
+    - generic: Добавьте следующий шаг в этот рабочий процесс
+    - generic "Ответ"
+    - button "Добавить параллельный узел":
+      - generic: Добавить параллельный узел
+  - button "Добавить узел"
+  - button "Добавить узел"
+  - button "Добавить узел"
+  - button "НАЧАТЬ Добавить узел Начало":
+    - generic: НАЧАТЬ
+    - button "Добавить узел"
+    - button "Начало":
+      - generic "Начало"
+  - button "Добавить узел Больше LLM Настройка модели":
+    - button "Добавить узел"
+    - button "Больше"
+    - button "LLM":
+      - generic "LLM"
+    - button "Настройка модели" [disabled]:
+      - generic "Gemini 3.5 Flash-Lite"
+      - generic: CHAT
+  - button "Добавить узел Ответ Ответ LLM / text":
+    - button "Добавить узел"
+    - button "Ответ":
+      - generic "Ответ"
+    - generic: Ответ
+    - generic "LLM"
+    - generic: /
+    - generic "text"
+  - button "Добавить узел Knowledge Retrieval 🤖 044 Records Knowledge Base — v1":
+    - button "Добавить узел"
+    - button "Knowledge Retrieval":
+      - generic "Knowledge Retrieval"
+    - generic: 🤖
+    - generic: 044 Records Knowledge Base — v1
+  - link "React Flow attribution":
+    - /url: https://reactflow.dev
+    - text: React Flow
+- alert: Оркестрация · Детали приложения - Dify
+- region "Notifications"
+- listbox "Typeahead menu"
+- listbox "Typeahead menu"
+- listbox "Typeahead menu"
+- listbox "Typeahead menu"
+- listbox "Typeahead menu"
+- listbox "Typeahead menu"

@@ -1,0 +1,174 @@
+- link "Перейти к основному содержанию":
+  - /url: "#main-content"
+- complementary:
+  - link "Главная":
+    - /url: /
+  - generic: /
+  - link "Студия":
+    - /url: /apps
+  - button "Ищите что угодно"
+  - button "Свернуть боковую панель":
+  - generic: 🤖
+  - generic: 044 Records Support — v1
+  - button "Дополнительные действия для 044 Records Support — v1"
+  - generic: Чатфлоу
+  - navigation:
+    - link "Оркестрация":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/workflow
+      - generic: Оркестрация
+    - link "Точка доступа":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/access-point
+      - generic: Точка доступа
+    - link "Журналы":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/logs
+      - generic: Журналы
+    - link "Аннотации":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/annotations
+      - generic: Аннотации
+    - link "Мониторинг":
+      - /url: /app/514f7f34-0792-4afe-80aa-1d32199e00ae/overview
+      - generic: Мониторинг
+  - button "Dify Счет":
+    - generic: D
+    - generic "Dify"
+    - generic: Счет
+  - button "Открыть меню помощи"
+- main:
+  - button "Добавить узел"
+  - button "Добавить заметку"
+  - button "Режим указателя" [pressed]
+  - button "Режим руки"
+  - button "Организовать узлы"
+  - button "Больше действий"
+  - button "Отменить"
+  - button "Повторить" [disabled]
+  - button "История изменений"
+  - generic: Посмотреть кэшированные переменные
+  - generic: Ясно
+  - img "React Flow mini map"
+  - button "Уменьшить"
+  - button "92%"
+  - button "Увеличить"
+  - status "Статус сохранения рабочего процесса":
+    - generic: Автосохранено
+    - time: 15:53:18
+    - generic: ·
+    - generic: Не опубликовано
+  - button "Прокрутите до выбранного узла"
+  - button "Предпросмотр": Предпросмотр
+  - button "Посмотреть историю запусков"
+  - button "Контрольный список"
+  - button "Переменные разговора"
+  - button "Переменные среды"
+  - button "Системные переменные"
+  - button "Функции": Функции
+  - button "Опубликовать": Опубликовать
+  - button "История версий"
+  - separator "Панель настройки узла"
+  - textbox "Добавить заголовок...": Knowledge Retrieval
+  - button "Выполнить этот шаг":
+  - link "Помощь":
+    - /url: https://docs.dify.ai/en/cloud/use-dify/nodes/knowledge-retrieval
+  - button "Больше"
+  - button "Закрывать":
+  - textbox "Добавить описание..."
+  - tablist:
+    - tab "НАСТРОЙКИ" [selected]
+    - tab "ПОСЛЕДНИЙ ЗАПУСК"
+  - tabpanel "НАСТРОЙКИ":
+    - generic: Текст запроса
+    - button "Начало sys.query string 0":
+      - generic "Начало"
+      - generic "sys.query"
+      - generic "string"
+      - textbox: "0"
+    - generic: Знания *
+    - button "Настройки поиска" [expanded]:
+      - text: Настройки поиска
+    - dialog:
+      - generic: Настройки поиска
+      - generic: По умолчанию используется многоканальная проверка. Знания извлекаются из нескольких баз знаний, а затем повторно ранжируются.
+      - generic: Настройки переранжирования
+      - generic: Взвешенная оценка
+      - button "Регулируя назначенные веса, эта стратегия переранжирования определяет, следует ли отдавать приоритет семантическому или ключевому соответствию." [active]
+      - generic: Модель повторного ранжирования
+      - button "Модель повторного ранжирования изменит порядок списка документов-кандидатов на основе семантического соответствия запросу пользователя, улучшая результаты семантического ранжирования"
+      - generic: Модель повторного ранжирования
+      - button "Модель повторного ранжирования изменит порядок списка документов-кандидатов на основе семантического соответствия запросу пользователя, улучшая результаты семантического ранжирования"
+      - button "Настройка модели":
+        - generic "qwen3-rerank"
+      - group "Top K":
+        - generic: Top K
+        - generic: Top K
+        - button "Используется для фильтрации фрагментов, наиболее похожих на вопросы пользователей. Система также будет динамически корректировать значение Top K в зависимости от max_tokens выбранной модели."
+        - textbox "Top K": "4"
+        - button "Increment value"
+        - button "Decrement value"
+        - spinbutton: "4"
+        - group "Top K":
+          - generic: Top K
+          - slider "Top K": "4"
+      - group "Порог оценки":
+        - generic: Порог оценки
+        - switch
+        - checkbox
+        - generic: Порог оценки
+        - button "Используется для установки порога сходства для фильтрации фрагментов."
+        - textbox "Порог оценки" [disabled]: 0,7
+        - button "Increment value" [disabled]
+        - button "Decrement value" [disabled]
+        - spinbutton [disabled]: "0.7"
+        - group "Порог оценки":
+          - generic: Порог оценки
+          - slider "Порог оценки" [disabled]: "70"
+    - button "Добавить Знания"
+    - generic: 🤖
+    - generic: 044 Records Knowledge Base — v1
+    - generic: HQ · ГИБРИД
+    - button "Фильтрация метаданных" [disabled]:
+      - generic: Фильтрация метаданных
+    - button "Фильтрация метаданных — это процесс использования атрибутов метаданных (таких как теги, категории или права доступа) для уточнения и контроля извлечения соответствующей информации внутри системы."
+    - button "Отключено":
+      - text: Отключено
+    - button "Выходные переменные":
+      - generic: Выходные переменные
+    - generic: СЛЕДУЮЩИЙ ШАГ
+    - generic: Добавьте следующий шаг в этот рабочий процесс
+    - generic "LLM"
+    - button "Добавить параллельный узел":
+      - generic: Добавить параллельный узел
+  - button "Добавить узел"
+  - button "Добавить узел"
+  - button "Добавить узел"
+  - button "НАЧАТЬ Добавить узел Начало":
+    - generic: НАЧАТЬ
+    - button "Добавить узел"
+    - button "Начало":
+      - generic "Начало"
+  - button "Добавить узел LLM Настройка модели":
+    - button "Добавить узел"
+    - button "LLM":
+      - generic "LLM"
+    - button "Настройка модели" [disabled]:
+      - generic "Gemini 3.1 Flash-Lite"
+      - generic: CHAT
+  - button "Добавить узел Ответ Ответ LLM / text":
+    - button "Добавить узел"
+    - button "Ответ":
+      - generic "Ответ"
+    - generic: Ответ
+    - generic "LLM"
+    - generic: /
+    - generic "text"
+  - button "Добавить узел Больше Knowledge Retrieval 🤖 044 Records Knowledge Base — v1":
+    - button "Добавить узел"
+    - button "Больше"
+    - button "Knowledge Retrieval":
+      - generic "Knowledge Retrieval"
+    - generic: 🤖
+    - generic: 044 Records Knowledge Base — v1
+  - link "React Flow attribution":
+    - /url: https://reactflow.dev
+    - text: React Flow
+- alert: Оркестрация · Детали приложения - Dify
+- region "Notifications"

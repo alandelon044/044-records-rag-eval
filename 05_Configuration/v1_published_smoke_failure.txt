@@ -1,0 +1,27 @@
+- generic: 🤖
+- generic: 044 Records Support — v1
+- button "Collapse Sidebar"
+- button "Start New chat": Start New chat
+- button "044 Records music genres? 🎵"
+- button "More"
+- button "044 Records music genres? 🎵"
+- button "More"
+- button "Submit demo by email? 📧"
+- button "More"
+- button "More"
+- generic: Powered by
+- img "Dify"
+- button "Expand Sidebar":
+- generic: 🤖
+- button "Reset conversation":
+- paragraph: What kinds of music does 044 Records release?
+- generic: 🤖
+- 'button "User Rate: like"'
+- 'button "User Rate: dislike"'
+- button:
+  - img "Workflow Process failed"
+  - generic: "req_id: ccb85d4f72 PluginInvokeError: {\"args\":{\"traceback\":\"Traceback (most recent call last):\\n File \\\"/app/.venv/lib/python3.12/site-packages/dify_plugin/core/server/io_server.py\\\", line 96, in _execute_request_in_thread\\n self._execute_request(\\n File \\\"/app/.venv/lib/python3.12/site-packages/dify_plugin/plugin.py\\\", line 574, in _execute_request\\n for message in response:\\n ^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/dify_plugin/core/plugin_executor.py\\\", line 330, in generator\\n yield from result\\n File \\\"/app/.venv/lib/python3.12/site-packages/dify_plugin/interfaces/model/large_language_model.py\\\", line 891, in invoke\\n yield from result\\n File \\\"/app/models/llm/llm.py\\\", line 936, in _handle_generate_stream_response\\n for chunk in response:\\n ^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/models.py\\\", line 6535, in generate_content_stream\\n for chunk in response:\\n ^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/models.py\\\", line 6167, in _generate_content_stream_with_continuation\\n for chunk in self._generate_content_stream(\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/models.py\\\", line 4776, in _generate_content_stream\\n for response in self._api_client.request_streamed(\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/_api_client.py\\\", line 1841, in request_streamed\\n session_response = self._request(http_request, http_options, stream=True)\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/_api_client.py\\\", line 1621, in _request\\n return self._retry(self._request_once, http_request, stream) # type: ignore[no-any-return]\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py\\\", line 470, in __call__\\n do = self.iter(retry_state=retry_state)\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py\\\", line 371, in iter\\n result = action(retry_state)\\n ^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py\\\", line 413, in exc_check\\n raise retry_exc.reraise()\\n ^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py\\\", line 184, in reraise\\n raise self.last_attempt.result()\\n ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n File \\\"/usr/local/lib/python3.12/concurrent/futures/_base.py\\\", line 449, in result\\n return self.__get_result()\\n ^^^^^^^^^^^^^^^^^^^\\n File \\\"/usr/local/lib/python3.12/concurrent/futures/_base.py\\\", line 401, in __get_result\\n raise self._exception\\n File \\\"/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py\\\", line 473, in __call__\\n result = fn(*args, **kwargs)\\n ^^^^^^^^^^^^^^^^^^^\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/_api_client.py\\\", line 1598, in _request_once\\n errors.APIError.raise_for_response(response)\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/errors.py\\\", line 173, in raise_for_response\\n cls.raise_error(response.status_code, response_json, response)\\n File \\\"/app/.venv/lib/python3.12/site-packages/google/genai/errors.py\\\", line 204, in raise_error\\n raise ServerError(status_code, response_json, response)\\ngoogle.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}\\n\"},\"error_type\":\"ServerError\",\"message\":\"503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}\"}"
+- textbox "Talk to 044 Records Support — v1"
+- button "Send" [disabled]
+- alert
+- region "Notifications"
