@@ -11,7 +11,7 @@ Find out not only *whether* a RAG assistant answers well, but *why* it fails, an
 - **Assistant:** Dify chatflow `Start → Knowledge Retrieval → LLM → Answer`, Gemini 3.1 Flash-Lite, temperature 0.2.
 - **Knowledge base:** 10 short English policy documents written for the project (store, shipping, payments, returns, pre-orders, events, demos, royalties, FAQ). Some topics were left out on purpose to test refusals.
 - **Live demo:** [044 Records Support](https://udify.app/chat/fVOybmn4pYiqwE40), the current v3 configuration (fictional label, English only).
-- **Test set:** 40 questions in 6 categories: simple fact (10), compound (6), exception to a rule (8), not in the knowledge base (8), false premise (4), off-topic or provocation (4). Five questions are written casually (typos, no punctuation).
+- **Test set:** 40 questions in 6 categories: simple fact (10), compound (6), exception to a rule (8), not in the knowledge base (8), false premise (4), off-topic or provocation (4). Six questions are written casually (typos, abbreviations, or missing punctuation); the planned range was 4–5.
 
 ## How answers were scored
 
@@ -38,6 +38,7 @@ Predictions for v2 and v3 were written in the config logs before each run.
 | **Fully correct** | 13/40 (32.5%) | 20/40 (50%) | **28/40 (70%)** |
 | Average correctness (0–2) | 1.18 | 1.48 | 1.70 |
 | Behavior pass | 82.5% | 82.5% | 95% |
+| Source pass (where expected) | 75% | 75% | 92.9% |
 | Errors caused by search | 16 | 16 | **2** |
 | Errors caused by generation | 11 | 4 | 10 |
 
@@ -66,14 +67,15 @@ Predictions for v2 and v3 were written in the config logs before each run.
 
 ## Conclusions
 
-- **Measure the cause, not only the score.** After v2, 80% of the remaining errors came from retrieval, which no prompt can fix. Parent-child chunking cut retrieval errors from 16 to 2.
-- **Prompt and retrieval fix different things.** The prompt fixed refusals, off-topic handling and false-premise answers; retrieval fixed missing details and exceptions.
+- **Measure the cause, not only the score.** After v2, 80% of the remaining errors came from retrieval, which no prompt can fix. The combined v3 retrieval change (Parent-child chunking plus Top K 4) reduced retrieval errors from 16 to 2.
+- **Prompt and retrieval fix different things.** The v2 prompt eliminated `NO_REFUSAL` guesses and improved off-topic handling. It corrected FP-01, but false-premise performance fell from 50% in v1 to 25% in v2; v3 brought it back to 50% after the shipping-area rule reached the model in FP-03.
 - **Short chunks hurt in a small, structured knowledge base.** FAQ questions were split from their answers and took one of the three retrieval slots in 8 of 13 checked queries.
 - **The bottleneck is now generation.** 10 of 12 remaining v3 errors had the needed text in the context. Half are side effects of the v2 prompt (dropped details, over-cautious hedging, "That is not correct" without a false premise). That is the next thing to fix.
 
 ## Limitations
 
 - **Not a blind test:** the same 40 questions were used for all versions, and early answers were analysed in detail. It is a fixed set for iterative evaluation.
+- **Casual-style target:** the plan called for 4–5 casual questions, but the final set contained 6. This was detected after the runs; style labels did not affect scoring.
 - **One scorer** (the author), no second reviewer; scoring is strict, and some key facts are broader than the question needs. Issues found after the runs are listed in [`known_test_case_issues.md`](02_Test_Cases/known_test_case_issues.md); no scores were changed.
 - **v3 changed two retrieval settings at once** (chunking and Top K), so the gain belongs to the combination.
 - **Small, clean knowledge base** (10 short documents). Giving the model whole documents works here; a large knowledge base would need section-level parents.
